@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+    let location = useLocation();
+
     const [query, setQuery] = useState("");
     const navigate = useNavigate(); 
 
@@ -33,13 +36,13 @@ const Navbar = () => {
                     <div className="d-flex ms-auto align-items-center" style={{ paddingRight: "125px" }}>
                         <ul className="navbar-nav mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/popular">Popular</Link>
+                                <Link className={`nav-link ${location.pathname==='/popular'?"active":""}`} aria-current="page" to="/popular">Popular</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/toprated">Top Rated</Link>
+                                <Link className={`nav-link ${location.pathname==='/toprated'?"active":""}`} to="/toprated">Top Rated</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/upcoming">Upcoming</Link>
+                                <Link className={`nav-link ${location.pathname==='/upcoming'?"active":""}`} to="/upcoming">Upcoming</Link>
                             </li>
                         </ul>
                         <form className="d-flex ms-3" role="search" onSubmit={handleSearch}>

@@ -49,7 +49,6 @@ const Movie = ({ Api_key, category }) => {
             const url = `https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${Api_key}&language=en-US`;
             let data = await fetch(url);
             let parsedData = await data.json();
-            console.log(parsedData.cast);
             setCastImages(parsedData.cast.map(castMember => castMember.profile_path));
             setCastNames(parsedData.cast.map(castMember => castMember.name));
             setcharname(parsedData.cast.map(castMember => castMember.character));

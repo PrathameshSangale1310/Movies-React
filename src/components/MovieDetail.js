@@ -1,14 +1,14 @@
 import React from 'react';
 
-const MovieDetail = ({ title, imageUrl, overview, onClose, vote_average, castimages, name = [] , char_name=[]}) => {
+const MovieDetail = ({ title, imageUrl, overview, onClose, vote_average, castimages, name = [], char_name=[] }) => {
     return (
         <div style={{ position: "relative" }}>
             <button 
                 onClick={onClose} 
                 style={{
-                    position: "absolute",
-                    top: "0px",
-                    right: "70px",
+                    position: "fixed",
+                    top: "50px",
+                    right: "60px",
                     background: "none",
                     border: "none",
                     color: "white",
@@ -22,7 +22,7 @@ const MovieDetail = ({ title, imageUrl, overview, onClose, vote_average, castima
             <div className="movie-detail" style={{
                 padding: "20px",
                 paddingTop: "60px",
-                backgroundColor: "transparent",
+                backgroundColor: "rgb(58, 58, 58)",  // Changed background color
                 color: "white",
                 position: "fixed",
                 top: "25px",
@@ -94,7 +94,6 @@ const MovieDetail = ({ title, imageUrl, overview, onClose, vote_average, castima
                                     />
                                     <p style={{ marginTop: "5px", color: "white", textAlign:"left", paddingLeft:"23px" }}>{name[index] || "Name not available"}</p>
                                     <p style={{ marginTop: "2px", color: "white", textAlign:"left", paddingLeft:"23px" }}>Character: {char_name[index] || "Name not available"}</p>
-
                                 </div>
                             )
                         ))
